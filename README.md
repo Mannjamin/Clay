@@ -43,7 +43,7 @@ Inserts a small signature indicating the page was generated with clay, supports 
 Under the hood, the class you care about is ClayTemplate, this is the class that allows you to generate a nice piece of output from a template.
 To get an instance of ClayTemplate, you use the builder class, ClayTemplateBuilder, which has a builder pattern to it's use.
 
-First off, you want to start up a builder by calling the static function **newBuilder** in ClayTemplate
+First off, you want to start up a builder by calling the static function **newBuilder** in ClayTemplate.
 ```
 ClayTemplate::newBuilder()
 ```
@@ -64,7 +64,7 @@ ClayTemplate::newBuilder()
 ->addProperty('userName', 'Mark')
 ```
 
-Once this is done you can use **build()** to get your instance of ClayTemplate
+Once this is done you can use **build()** to get your instance of ClayTemplate.
 
 ```
 ClayTemplate::newBuilder()
