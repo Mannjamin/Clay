@@ -6,6 +6,7 @@ These are the currently supported Clay tags.
 
 ### {{echo}}
 > Syntax: {{echo propertyOrString}}
+
 A very simple tag that simply outputs the given value in its place, if a property is used it will output the value of that property (or null if not set), for example:
 ```
 Hi there, {{echo property.userName}}!
@@ -13,6 +14,7 @@ Hi there, {{echo property.userName}}!
 
 ### {{if}} and {{/if}}
 > Syntax: {{if property condition}} {{/if}}
+
 These two tags are used together to determine whether part of a page should be outputted or not, you can use this to filter out parts of your page that you only want shown in certain circumstances. Here's an example of a greeting that only appears if the userName property is set:
 ```
 {{if property.userName isNotNull}}
@@ -22,6 +24,7 @@ These two tags are used together to determine whether part of a page should be o
 
 ### {{include}}
 > Syntax: {{include pathToFile}}
+
 You can use this tag to import other files or even other clay templates into the current template. (I use this extensively in my web application) for example:
 ```
 <style type='text/css'>
@@ -32,4 +35,5 @@ You can use this tag to import other files or even other clay templates into the
 
 ### {{signature}}
 > Syntax: {{signature typeOfFile}}
+
 Inserts a small signature indicating the page was generated with clay, supports typeOfFile being html, css or js.
