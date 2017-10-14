@@ -37,3 +37,51 @@ You can use this tag to import other files or even other clay templates into the
 > Syntax: {{signature typeOfFile}}
 
 Inserts a small signature indicating the page was generated with clay, supports typeOfFile being html, css or js.
+
+# Generating a page from a template
+
+Under the hood, the class you care about is ClayTemplate, this is the class that allows you to generate a nice piece of output from a template.
+To get an instance of ClayTemplate, you use the builder class, ClayTemplateBuilder, which has a builder pattern to it's use.
+
+First off, you want to start up a builder by calling the static function **newBuilder** in ClayTemplate
+```
+ClayTemplate::newBuilder()
+```
+
+Now you set the file path of the template you want to use using **setTemplateFilePath(path)**
+
+```
+ClayTemplate::newBuilder()
+->setTemplateFilePath('path/to/my/template.clay.html')
+```
+
+Next you add the properties to use during generation and their values via **addProperty(name, value)**
+
+```
+ClayTemplate::newBuilder()
+->setTemplateFilePath('path/to/my/template.clay.html')
+->addProperty('foo', 'bar')
+->addProperty('userName', 'Mark')
+```
+
+Once this is done you can use **build()** to get your instance of ClayTemplate
+
+```
+ClayTemplate::newBuilder()
+->setTemplateFilePath('path/to/my/template.clay.html')
+->addProperty('foo', 'bar')
+->addProperty('userName', 'Mark')
+->build()
+```
+
+A ClayTemplate instance only has one publically accesible function, **toString()**, this will return as a string the output from your template with the properties you specified in the builder.
+
+Here's an example that ties all of this together and simply outputs the finished result to the user immedietally:
+```
+echo ClayTemplate::newBuilder()
+->setTemplateFilePath('path/to/my/template.clay.html')
+->addProperty('foo', 'bar')
+->addProperty('userName', 'Mark')
+->build()
+->toString();
+```
