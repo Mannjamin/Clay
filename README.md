@@ -25,7 +25,7 @@ These two tags are used together to determine whether part of a page should be o
 ### {{include}}
 > Syntax: {{include pathToFile}}
 
-You can use this tag to import other files or even other clay templates into the current template. (I use this extensively in my web application) for example:
+You can use this tag to import other files or even other clay templates into the current template. (I use this extensively in my web applications) for example:
 ```
 <style type='text/css'>
 {{include path/to/css/fonts.clay.css}}
@@ -36,7 +36,7 @@ You can use this tag to import other files or even other clay templates into the
 ### {{signature}}
 > Syntax: {{signature typeOfFile}}
 
-Inserts a small signature indicating the page was generated with clay, supports typeOfFile being html, css or js.
+Inserts a small signature indicating the page was generated with Clay, supports typeOfFile being html, css or js.
 
 # Generating a page from a template
 
